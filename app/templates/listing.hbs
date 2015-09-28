@@ -1,6 +1,6 @@
 {{outlet}}
 
-<h2>{{model.title}} ${{model.price}}</h2>
+<h2>{{model.title}} {{currency-format model.price}}</h2>
 <h5>{{current-date model.dateListed}}</h5>
 <p>
   {{model.body}}
