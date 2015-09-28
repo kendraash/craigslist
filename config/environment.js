@@ -4,6 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'craigslist',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    firebase: 'https://craigslist-ak-ka.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
