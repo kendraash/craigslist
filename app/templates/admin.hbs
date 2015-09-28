@@ -1,0 +1,9 @@
+{{outlet}}
+<ul>
+  {{#each model as |category|}}
+    {{#link-to 'category' category.id}}
+    <li>{{category.name}}</li>
+    {{/link-to}}
+  {{/each}}
+</ul>
+{{new-category saveCategory="saveCategory"}}
