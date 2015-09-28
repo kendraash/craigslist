@@ -9,5 +9,4 @@ export default Ember.Route.extend({
       this.transitionTo('category', params.category)
     }
   }
-
 });

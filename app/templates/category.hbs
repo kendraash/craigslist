@@ -4,7 +4,7 @@
 
 <ul>
   {{#each model.listings as |listing|}}
-  <li>{{listing.title}}</li>
+  <li>{{listing.title}} Posted: {{current-date listing.dateListed}}</li>
   {{/each}}
 </ul>
 {{new-listing saveListing="saveListing" category=model}}
