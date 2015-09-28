@@ -1,18 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  addNewListing: true,
   actions: {
+
+    addNewListing() {
+      this.set("addNewListing", true);
+    },
     save() {
-      debugger;
       var params = {
         title: this.get('title'),
         body: this.get('body'),
         price: this.get('price'),
         category: this.get('category'),
-        // Come back to for saving date
         dateListed: new Date()
       }
+      this.set("addNewListing", false);
       this.sendAction('saveListing', params);
     }
   }

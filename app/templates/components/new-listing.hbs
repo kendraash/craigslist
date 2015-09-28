@@ -3,19 +3,18 @@
   <form>
     <div class="form-group">
       <label for="title">Title</label>
-      {{input value=title id="title"}}
+      {{input value=title id="title" class="form-control"}}
     </div>
     <div class="form-group">
       <label for="body">Notes</label>
-      {{input value=body id="body"}}
+      {{input value=body id="body" class="form-control"}}
     </div>
     <div class="form-group">
       <label for="price">Price</label>
-      {{input value=price id="price"}}
+      {{input value=price id="price" class="form-control"}}
     </div>
     <button class='btn' {{action "save"}}>Save</button>
   </form>
-
-  {{else}}
-    <button class="btn" {{action 'listingFormShow'}}>Add New Listing</button>
+{{else}}
+  <button class="btn" {{action 'addNewListing'}}>Add New Listing</button>
 {{/if}}

@@ -4,7 +4,9 @@
 
 <ul>
   {{#each model.listings as |listing|}}
+  {{#link-to 'listing' listing.id}}
   <li>{{listing.title}} Posted: {{current-date listing.dateListed}}</li>
+  {{/link-to}}
   {{/each}}
 </ul>
 {{new-listing saveListing="saveListing" category=model}}
