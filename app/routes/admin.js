@@ -8,8 +8,16 @@ export default Ember.Route.extend({
     saveCategory(params) {
       var newCategory = this.store.createRecord('category', params);
       newCategory.save();
-      params.category.save();
       this.transitionTo('admin');
-    }
+    },
+    destroyCategory(category) {
+      var listings = category.get('listings').then(function(listings) {
+        listings.forEach(function(listing) {
+          listing.destroyRecord();
+        });
+      });
+      category.destroyRecord();
+      this.transitionTo('admin');
+    },
   }
 });

@@ -4,6 +4,7 @@
     {{#link-to 'category' category.id}}
     <li>{{category.name}}</li>
     {{/link-to}}
+    <button class="btn btn-danger" {{action 'destroyCategory' category}}>Delete</button>
   {{/each}}
 </ul>
 {{new-category saveCategory="saveCategory"}}
