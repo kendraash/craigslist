@@ -1,0 +1,13 @@
+{{outlet}}
+
+<h1>{{model.name}}</h1>
+
+<ul>
+  {{#each model.listings as |listing|}}
+  {{#link-to 'listing' listing.id}}
+  <li>{{listing.title}} Posted: {{current-date listing.dateListed}}</li>
+  {{/link-to}}
+  <button class="btn btn-danger" {{action 'destroyListing' listing}}>Delete</button>
+  {{/each}}
+</ul>
+{{new-listing saveListing="saveListing" category=model}}

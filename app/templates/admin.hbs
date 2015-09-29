@@ -1,7 +1,7 @@
 {{outlet}}
 <ul>
   {{#each model as |category|}}
-    {{#link-to 'category' category.id}}
+    {{#link-to 'admin-category' category.id}}
     <li>{{category.name}}</li>
     {{/link-to}}
     <button class="btn btn-danger" {{action 'destroyCategory' category}}>Delete</button>
